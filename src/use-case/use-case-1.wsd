@@ -2,13 +2,11 @@
 left to right direction
 skinparam packageStyle rectangle
 skinparam monochrome true
-actor customer
-actor clerk
-rectangle checkout {
-  customer -- (checkout)
-  (checkout) .> (payment) : include
-  (help) .> (checkout) : extends
-  (checkout) -- clerk
-  customer -- (help)
+actor "کاربر" as user
+rectangle Authentication {
+usecase "ورود" as sign_in
+usecase "خروج" as sign_out
 }
+user -- sign_in
+user -- sign_out
 @enduml

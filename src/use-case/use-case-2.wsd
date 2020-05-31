@@ -1,0 +1,48 @@
+@startuml use-case-2
+left to right direction
+skinparam packageStyle rectangle
+skinparam monochrome true
+actor "کاربر" as user
+rectangle FollowUp {
+  usecase "اضافه‌کردن پزشک" as add_doctor
+  usecase "ویرایش اطلاعات پزشک" as edit_doctor
+  usecase "مشاهده اطلاعات پزشک" as see_doctor
+  usecase "اضافه‌کردن پرستار" as add_nurse
+  usecase "ویرایش اطلاعات پرستار" as edit_nurse
+  usecase "مشاهده اطلاعات پرستار" as see_nurse
+  usecase "اضافه‌کردن دارو" as add_drug
+  usecase "ویرایش اطلاعات دارو" as edit_drug
+  usecase "مشاهده اطلاعات دارو" as see_drug
+  usecase "اضافه‌کردن بیمار" as add_patient
+  usecase "ویرایش اطلاعات بیمار" as edit_patient
+  usecase "مشاهده اطلاعات بیمار" as see_patient
+  usecase "اضافه‌کردن فرم آموزش" as add_edu_form
+  usecase "مشاهده فرم آموزش" as see_edu_form
+  usecase "پرینت فرم آموزش" as print_edu_form
+  usecase "ویرایش فرم آموزش" as edit_edu_form
+}
+user -- add_doctor
+user -- edit_doctor
+user -- see_doctor
+edit_doctor .> see_doctor : include
+user -- add_nurse
+user -- edit_nurse
+user -- see_nurse
+edit_nurse .> see_nurse : include
+user -- add_drug
+user -- edit_drug
+user -- see_drug
+edit_drug .> see_drug : include
+user -- add_patient
+user -- edit_patient
+user -- see_patient
+edit_patient .> see_patient : include
+user -- add_edu_form
+add_edu_form .> see_patient : include
+user -- edit_edu_form
+user -- see_edu_form
+edit_edu_form .> see_edu_form : include
+see_edu_form .> see_patient : include
+user -- print_edu_form
+print_edu_form .> see_edu_form : include
+@enduml
