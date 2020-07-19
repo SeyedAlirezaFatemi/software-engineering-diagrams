@@ -1,0 +1,12 @@
+@startuml use-case-1
+left to right direction
+skinparam packageStyle rectangle
+skinparam monochrome true
+actor "کاربر" as user
+rectangle Authentication {
+usecase "ورود" as sign_in
+usecase "خروج" as sign_out
+}
+user -- sign_in
+user -- sign_out
+@enduml
