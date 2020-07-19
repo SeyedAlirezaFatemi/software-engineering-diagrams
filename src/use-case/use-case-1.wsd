@@ -2,12 +2,12 @@
 left to right direction
 skinparam packageStyle rectangle
 skinparam monochrome true
-actor customer
-actor clerk
-rectangle checkout {
-  customer -- (checkout)
+actor پرستار as nurse
+actor پزشک as doctor
+actor کاربر as user
+rectangle سیب {
+  nurse -- (checkout)
   (checkout) .> (payment) : include
-  (help) .> (checkout) : extends
   (checkout) -- clerk
   customer -- (help)
 }
